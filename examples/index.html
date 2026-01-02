@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Koh JS Magento Test</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                padding: 20px;
+                background: #f4f4f4;
+            }
+            #magento-app {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .product-card {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            input {
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .loading {
+                color: orange;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Magento Product Manager</h1>
+
+        <div id="magento-app"></div>
+
+        <script type="text/x-magento-init">
+            {
+                "*": {
+                    "Magento_Catalog/js/product-list": {
+                        "title": "Aanbevolen Producten",
+                        "products": [
+                        {"sku": "bag-02", "name": "Framework Messenger Bag", "price": "49.00"},
+                        {"sku": "shirt-01", "name": "Koh JS T-Shirt", "price": "29.95"},
+                            {"sku": "app-87", "name": "Shitfree app", "price": "54.49"}
+                        ]
+                    }
+                }
+            }
+        </script>
+
+        <script type="module">
+            import { mount, parseModule } from '../src/koh'
+            import { productConfig } from './productConfig.js'
+
+            const appRoot = document.getElementById('magento-app')
+            mount(
+                'magento-app',
+                productConfig({
+                    products: parseModule('*', 'Magento_Catalog/js/product-list')?.products ?? [],
+                })
+            )
+        </script>
+    </body>
+</html>
