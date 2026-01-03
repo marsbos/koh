@@ -46,6 +46,13 @@ When you render a list with k.for, Koh creates a Map between your objects and yo
 ### 2. "It Can't Be Otherwise" Reactivity
 Computeds in Koh are deterministic. If your formula accesses a property, it is subscribed. Forever. In a cart total, Koh tracks the list AND every individual price signal accessed inside automatically.
 
+```
+const cartTotals = k.compute(() => {
+    // Koh tracks the list AND every individual price signal accessed inside.
+    return cart.items().reduce((p, c) => p + c.price() * c.amount(), 0);
+});
+```
+
 ---
 
 ## 🎯 Challenges for the Brave
