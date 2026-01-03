@@ -1,7 +1,8 @@
 # 🏝️ Koh JS: The Island of Stability
 **Forget the Virtual DOM. Embrace the Closure.**
 
-Koh JS is a high-performance, reactive UI framework designed for the Island Architecture. It is built for developers who are tired of fighting re-renders, stale closures, and the overhead of modern "black-box" frameworks.
+Koh JS is not your replacement for React or Vue. It is another way of thinking altogether. 
+It is a surgical, `high-performance` reactive UI engine `specifically designed` for the **Island Architecture**. While others build monolithic trees, Koh builds independent, bulletproof islands that live and breathe inside any environment—from legacy Magento stores to modern static sites.
 
 > "Koh doesn't synchronize your data with the DOM. It physically glues them together."
 
