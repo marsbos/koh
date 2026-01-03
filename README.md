@@ -26,6 +26,16 @@ export const MyComponent = koh((k, props) => {
 
 ---
 
+## ⚙️ How It Works: The Mechanical Advantage
+
+Koh JS operates on a few simple, unbreakable laws of JavaScript:
+
+- **Reference Anchoring:** Instead of re-creating HTML from templates, Koh maps your data objects directly to persistent DOM nodes using a `Map`. When the data moves, the node moves.
+- **Dependency Tracking:** When you access a signal within a computed or a watcher, Koh automatically creates a subscription. There is no manual "dependency array"—if you use it, it’s tracked.
+- **Granular Hydration:** Koh can "wake up" existing DOM structures or inject new ones without disturbing the surrounding environment. It only hydrates the "islands" that need to be alive.
+
+---
+
 ## 🚀 Why Koh?
 
 Most frameworks guess what changed by diffing trees. Koh knows because it never loses the reference.
