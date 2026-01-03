@@ -20,7 +20,7 @@ export const MyComponent = koh((k, props) => {
 
 ### Why the Factory wins:
 - Physical Boundaries: Every island is a `real` Web Component. No CSS leaks, no global scope pollution, just clean encapsulation.
-- Zero-Overhead Lifecycle: Leveraging the browser-native connectedCallback. Koh knows exactly when an island enters or leaves the DOM without a complex internal scheduler.
+- Zero-Overhead Lifecycle: Leveraging the browser-native `connectedCallback`. Koh knows exactly when an island enters or leaves the DOM without a complex internal scheduler.
 - Persistent State: State defined in the factory is physically linked to that specific HTML node. It stays alive as long as the element exists.
 
 ---
@@ -31,15 +31,15 @@ Most frameworks guess what changed by diffing trees. Koh knows because it never 
 
 - ⚡ 4ms Reactive Pulse: Updates hit the exact text node or attribute in microseconds.
 - 🧠 Bulletproof Closures: Elements "remember" their birth-context. Sorting or moving elements never breaks their reactive links.
-- 🔗 Deep Reactive Signals: State proxies that automatically track nested objects and arrays.
-- 🛡️ Legacy Bridge: Specialized hydrate() logic to extract data from x-magento-init scripts and instantly transform them into reactive islands.
+- 🔗 Deep Reactive Signals: State proxies that `automatically` track nested objects and arrays.
+- 🛡️ Legacy Bridge: Specialized `hydrate()` logic to extract data from x-magento-init scripts and instantly transform them into reactive islands.
 
 ---
 
 ## 🛠️ The Core Philosophy
 
 ### 1. Physical Memory Identity
-When you render a list with k.for, Koh creates a Map between your objects and your DOM nodes. When you sort the data, Koh doesn't re-render; it physically moves the DOM nodes. The internal state (like focus or scroll position) is preserved because the element is never destroyed.
+When you render a list with k.for, Koh creates a Map between your objects and your DOM nodes. When you sort the data, Koh `doesn't re-render`; it physically moves the DOM nodes. The internal state (like focus or scroll position) is preserved because the element is never destroyed.
 
 ### 2. "It Can't Be Otherwise" Reactivity
 Computeds in Koh are deterministic. If your formula accesses a property, it is subscribed. Forever.
