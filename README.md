@@ -8,9 +8,9 @@ It is a surgical, `high-performance` reactive UI engine `specifically designed` 
 
 ---
 
-## 🏗️ The Koh Factory: Native Encapsulation
+## 🏗️ The Koh Factory: Built to Last
 
-Every Koh component is born from a **Factory Method**. This isn't just a function return; it's the birth of a **Native Custom Element**.
+Every Koh component is born from a **Factory Method**. This isn't just a function; it's the birth of a **Native Custom Element**.
 
 ```javascript
 export const MyComponent = koh((k, props) => { 
@@ -19,10 +19,22 @@ export const MyComponent = koh((k, props) => {
 })
 ```
 
-### Why the Factory wins:
-- Physical Boundaries: Every island is a `real` Web Component. No CSS leaks, no global scope pollution, just clean encapsulation.
-- Zero-Overhead Lifecycle: Leveraging the browser-native `connectedCallback`. Koh knows exactly when an island enters or leaves the DOM without a complex internal scheduler.
-- Persistent State: State defined in the factory is physically linked to that specific HTML node. It stays alive as long as the element exists.
+Inside the factory, your code runs **EXACTLY once**. No magic re-renders that reset your variables or break your logic. What you define at the start stays alive as long as the component exists.
+
+### Why this is a game-changer:
+- **Total DOM Control:** You have direct, unfiltered access to the real DOM nodes. No more fighting with refs or "the React way" of doing things.
+- **Physical Boundaries:** Every island is a real Web Component. It’s protected from the outside world, preventing CSS leaks and global scope pollution.
+- **Zero-Overhead:** Koh uses the browser's native `connectedCallback`. It knows exactly when an island is active without a heavy background engine.
+
+---
+
+## ✍️ The DSL: Write Less, Do More
+
+Koh uses a pure JavaScript syntax that feels like writing HTML, but with superpowers. No JSX, no Babel, no complex build steps.
+
+- **Direct Binding:** Use `k.watch` to link your data directly to a DOM attribute. When the data changes, the attribute updates instantly.
+- **Smart Lists:** With `k.for`, your data objects are literally anchored to HTML elements. If you sort your list, Koh physically moves the elements in the browser instead of destroying and recreating them.
+- **Native Power:** Because it's just JS, you can use any native browser API (like IntersectionObserver or Web Animations) directly inside your component without layers of abstraction.
 
 ---
 
