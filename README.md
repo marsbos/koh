@@ -31,7 +31,6 @@ Inside the factory, your code runs **EXACTLY once**. No magic re-renders that re
 ## ✍️ The DSL: Write Less, Do More
 
 Koh uses a pure JavaScript syntax that feels like writing HTML, but with superpowers. No JSX, no Babel, no complex build steps.
-Unlimited nesting of dom element factories. 
 
 - **Direct Binding:** Use `k.watch` to link your data directly to a DOM attribute. When the data changes, the attribute updates instantly.
 - **Smart Lists:** With `k.for`, your data objects are literally anchored to HTML elements. If you sort your list, Koh physically moves the elements in the browser instead of destroying and recreating them.
@@ -44,7 +43,8 @@ Unlimited nesting of dom element factories.
     k.html(
         k.dom.h1(k.watch(cartTotals, value => `Totals: ${value}`)),
         k.dom.div(
-            el => {
+            el => { 
+                // 'el' is the real DOM element!
                 el.className = 'flex flex-col'
             },
             k.dom.button('Add item', el => {
@@ -52,7 +52,8 @@ Unlimited nesting of dom element factories.
                     cart.items(prev => [...prev, { name: 'Cart item', price: 49.99, amount: 1 }])
                 }
             }),
-            // etc.
+            // Nesting can go as deep as you like ...
+            
 ```
 
 ---
