@@ -19,7 +19,7 @@ export const MyComponent = koh((k, props) => {
 ```
 
 ### Why the Factory wins:
-- Physical Boundaries: Every island is a real Web Component. No CSS leaks, no global scope pollution, just clean encapsulation.
+- Physical Boundaries: Every island is a `real` Web Component. No CSS leaks, no global scope pollution, just clean encapsulation.
 - Zero-Overhead Lifecycle: Leveraging the browser-native connectedCallback. Koh knows exactly when an island enters or leaves the DOM without a complex internal scheduler.
 - Persistent State: State defined in the factory is physically linked to that specific HTML node. It stays alive as long as the element exists.
 
