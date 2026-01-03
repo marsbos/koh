@@ -40,6 +40,7 @@ Unlimited nesting of dom element factories.
 *This is what it looks like:*
 
 ```javascript
+// k.html adds its children to the DOM.
     k.html(
         k.dom.h1(k.watch(cartTotals, value => `Totals: ${value}`)),
         k.dom.div(
@@ -51,8 +52,8 @@ Unlimited nesting of dom element factories.
                     cart.items(prev => [...prev, { name: 'Cart item', price: 49.99, amount: 1 }])
                 }
             }),
-            ......
-            ```
+            // etc.
+```
 
 ---
 
