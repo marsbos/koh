@@ -2,7 +2,7 @@
 **Forget the Virtual DOM. Embrace the Closure.**
 
 Koh JS is not your replacement for React or Vue. It is another way of thinking altogether. 
-It is a surgical, `high-performance` reactive UI engine `specifically designed` for the **Island Architecture**. While others build monolithic trees, Koh builds independent, bulletproof islands that live and breathe inside any environment—from legacy Magento stores to modern static sites.
+It is a surgical, `high-performance` reactive UI engine `specifically designed` for the **Island Architecture**. While others build monolithic trees, Koh builds independent, bulletproof islands that live and breathe inside any environment—from legacy and modern Magento stores to static sites.
 
 > "Koh doesn't synchronize your data with the DOM. It physically glues them together."
 
