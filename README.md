@@ -10,6 +10,15 @@ Koh JS is a high-performance, reactive UI framework designed for the Island Arch
 ## 🏗️ The Koh Factory: Native Encapsulation
 
 Every Koh component is born from a Factory Method. This isn't just a function return; it's the birth of a Native Custom Element.
+```
+Every Koh component is born from a **Factory Method**. This isn't just a function return; it's the birth of a **Native Custom Element**.
+
+```javascript
+export const MyComponent = koh((k, props) => { 
+    // This body runs EXACTLY once per instance.
+    // No re-renders. Ever.
+})
+```
 
 Inside the factory, your code runs EXACTLY once per instance. No re-renders. Ever.
 
