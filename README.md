@@ -85,7 +85,7 @@ Most frameworks guess what changed by diffing trees. Koh knows because it never 
 When you render a list with k.for, Koh creates a Map between your objects and your DOM nodes. When you sort the data, Koh `doesn't re-render`; it physically moves the DOM nodes. The internal state (like focus or scroll position) is preserved because the element is never destroyed.
 
 ### 2. "It Can't Be Otherwise" Reactivity
-Computeds in Koh are deterministic. If your formula accesses a property, it is subscribed. Forever.
+Computeds in Koh are deterministic. If your formula accesses a property, it is subscribed. Forever and ever (no, just until the component gets disconnected from the DOM).
 
 ```javascript
 const cartTotals = k.compute(() => {
